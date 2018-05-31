@@ -1,5 +1,7 @@
 body
 {
+	background-color: #f0f0f0;
+	color: #080808;
 	margin: 0 ;				/* スペース */
 	padding: 0 ;			/* 余白 */
 	font-size: 15px ;		/* 文字サイズ */
@@ -7,19 +9,22 @@ body
 }
 header
 {
-	border-bottom: 3px solid #888 ;		/* 枠線 */
+	border-bottom: 3px solid #00bfff ;		/* 枠線 */
 	text-align: center ;				/* テキスト、画像の真ん中寄せ */
 	padding: 1em 0 ;					/* 上下の余白 */
 	margin-bottom: 2em ;				/* 他のブロックとのスペース */
-	background: #e8e8e8 ;				/* 背景色(確認用) */
+	background: #030303 ;				/* 背景色(確認用) */
+	color: #F8F8F8;
+	font-size: 22px;
 }
 footer
 {
-	border-top: 3px solid #888 ;		/* 枠線 */
+	border-top: 3px solid #0000F0 ;		/* 枠線 */
 	text-align: center ;				/* テキスト、画像の真ん中寄せ */
 	margin-top: 2em ;					/* 他のブロックとのスペース */
 	padding: 1em 0 ;					/* 上下の余白 */
-	background: #e8e8e8 ;
+	background: #030303 ;
+	color: #f8f8f8;
 }
 .wrapper
 {
@@ -40,6 +45,19 @@ footer
 {
 	width: 320px ;
 	float: right;
+}
+.itemName{
+	font-size: 19px;
+	color: #000080;
+}
+.item {
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	background-color: #f8f8f8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 
