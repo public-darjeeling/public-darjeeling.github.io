@@ -67,6 +67,8 @@ footer
 	/* ボディ */
 	body
 	{
+		background-color: #f0f0f0;
+		color: #080808;
 		font-size: 13px ;	/* 文字サイズ */
 	}
 	.wrapper
