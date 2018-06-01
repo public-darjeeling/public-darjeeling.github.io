@@ -3,6 +3,7 @@
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href="style.css" rel="stylesheet">
+	<script src="BuildSimulator.js"></script>
 </head>
 <body>
 	<header>Hello World ~ Goodbye Dream!</header>
@@ -10,112 +11,112 @@
 		<div class="main">
 			<h1>This is Build Simulator for Warsong</h1>
 			<div class="item">
-				<div class="itemName">リンチ</div>
+				<div id="name1" class="itemName">リンチ</div>
 				<li>物理攻撃+25</li>
 				<li>攻撃速度+15%</li>
 				<li>移動速度+3%</li>
 				<li>【物理貫通】通常攻撃で目標を命中する時、4秒間、物理貫通＋9％。期間中、再び命中すると効果が累積し、最大5回まで累積可能</li>
-				<button id="button1">Set!</button> \2400
+				<button id="button1" onclick="onClick1()">Set!</button> \2400
 			</div>
 			<div class="item">
-				<div class="itemName">コローダー</div>
+				<div id="name2" class="itemName">コローダー</div>
 				<li>物理攻撃+50</li>
 				<li>【血染め】+10%HP吸収/物理</li>
 				<li>【メイム】通常攻撃で目標を命中する時、3秒間相手のHP回復効果-50%</li>
-				<button id="button2">Set!</button> \2400
+				<button id="button2" onclick="onClick2()">Set!</button> \2400
 			</div>
 			<div class="item">
-				<div class="itemName">ブラットスターブ</div>
+				<div id="name3" class="itemName">ブラットスターブ</div>
 				<li>物理攻撃+50</li>
 				<li>【血染め】+25%HP吸収/物理</li>
-				<button id="button3">Set!</button> \2400
+				<button id="button3" onclick="onClick3()">Set!</button> \2400
 			</div>
 			<div class="item">
-				<div class="itemName">キングスレイヤー</div>
+				<div id="name4" class="itemName">キングスレイヤー</div>
 				<li>物理攻撃+35</li>
 				<li>CR率+20%</li>
 				<li>【レジサイド】CRダメージ+30%</li>
-				<button id="button4">Set!</button> \2400
+				<button id="button4" onclick="onClick4()">Set!</button> \2400
 			</div>
 			<div class="item">
-				<div class="itemName">ソミュールダガー</div>
+				<div id="name5" class="itemName">ソミュールダガー</div>
 				<li>物理攻撃+60</li>
 				<li>移動速度+3%</li>
 				<li>【ライトニング】通常攻撃時、稲妻の連鎖を放ってターゲットに魔法ダメージ100を与える。CD4秒</li>
-				<button id="button5">Set!</button> \2400
+				<button id="button5" onclick="onClick5()">Set!</button> \2400
 			</div>
 			<div class="item">
-				<div class="itemName">スウィフトブレード</div>
+				<div id="name6" class="itemName">スウィフトブレード</div>
 				<li>攻撃速度+20%</li>
 				<li>CR率+15%</li>
 				<li>【ヘイスト】CR発生時に、2秒間自身の移動速度+20%</li>
-				<button id="button6">Set!</button> \2400
+				<button id="button6" onclick="onClick6()">Set!</button> \2400
 			</div>
 			<div class="item">
-				<div class="itemName">クリムゾンブレード</div>
+				<div id="name7" class="itemName">クリムゾンブレード</div>
 				<li>攻撃速度+30%</li>
 				<li>【ジャギーエッジ】物理貫通+25%</li>
-				<button id="button7">Set!</button> \2400
+				<button id="button7" onclick="onClick7()">Set!</button> \2400
 			</div>
 			<div class="item">
-				<div class="itemName">ジャギーブレード</div>
+				<div id="name8" class="itemName">ジャギーブレード</div>
 				<li>物理攻撃+40%</li>
 				<li>CR率+15%</li>
 				<li>【ヘイスト】CR発生時に、2秒間自身の移動速度+20%</li>
-				<button id="butto8">Set!</button> \2200
+				<button id="butto8" onclick="onClick8()">Set!</button> \2200
 			</div>
 			<div class="item">
-				<div class="itemName">リーチ</div>
+				<div id="name9" class="itemName">リーチ</div>
 				<li>攻撃速度+20%</li>
 				<li>【血染め】HP吸収/物理+15％</li>
 				<li>【リーチ】通常攻撃するたび、ターゲットの現在HPの6％分の物理ダメージを追加</li>
-				<button id="button9">Set!</button> \2200
+				<button id="button9" onclick="onClick9()">Set!</button> \2200
 			</div>
 			<div class="item">
-				<div class="itemName">クリスタルソード</div>
+				<div id="name10" class="itemName">クリスタルソード</div>
 				<li>物理攻撃+20</li>
 				<li>CD短縮+15%</li>
 				<li>移動速度+3%</li>
 				<li>【ルーンパワー】スキル使用後、次の通常攻撃時に追加物理ダメージを与える</li>
 				<li>【追撃】通常攻撃時、自身の移動速度+10％</li>
-				<button id="button10">Set!</button> \2200
+				<button id="button10" onclick="onClick10()">Set!</button> \2200
 			</div>
 			<div class="item">
-				<div class="itemName">クリーパー</div>
+				<div id="name11" class="itemName">クリーパー</div>
 				<li>物理攻撃+30</li>
 				<li>物理防御+10</li>
 				<li>CD短縮+10%</li>
 				<li>【物理防御低下】物理ダメージを与えるたび、相手の物理防御-6％。最大5回まで累積可能</li>
-				<button id="button11">Set!</button> \2200
+				<button id="button11" onclick="onClick11()">Set!</button> \2200
 			</div>
 			<div class="item">
-				<div class="itemName">ピアッサー</div>
+				<div id="name12" class="itemName">ピアッサー</div>
 				<li>物理攻撃+30</li>
 				<li>移動速度+10</li>
 				<li>【ディサピア】戦闘離脱後、移動速度+40</li>
 				<li>【物理貫通】+10</li>
-				<button id="button12">Set!</button> \2000
+				<button id="button12" onclick="onClick12()">Set!</button> \2000
 			</div>
 			<div class="item">
-				<div class="itemName">ジェリッドガントレット</div>
+				<div id="name13" class="itemName">ジェリッドガントレット</div>
 				<li>最大HP+500</li>
 				<li>物理防御+15</li>
 				<li>【フリジッド】通常攻撃時、ターゲットの移動速度-40％</li>
-				<button id="button13">Set!</button> \2000
+				<button id="button13" onclick="onClick13()">Set!</button> \2000
 			</div>
 			<div class="item">
-				<div class="itemName">アサシンエッジ</div>
+				<div id="name14" class="itemName">アサシンエッジ</div>
 				<li>物理攻撃+40</li>
 				<li>移動速度+5</li>
 				<li>【アサシン】敵の視界で隠れ身状態になると、次の通常攻撃時に物理ダメージがアップ。CD1秒</li>
 				<li>【ホームスラスト】レベル×1の物理貫通を獲得</li>
-				<button id="button14">Set!</button> \2000
+				<button id="button14" onclick="onClick14()">Set!</button> \2000
 			</div>
 		</div>
 		<div class="side">
-			<h2>News List</h2>
-			<h4>記事1</h4>
-			<h4>記事2</h4>
+			<h2>States</h2>
+			<div id="states"></div>
+			<a href="http://twitter.com/share?url=https://public-darjeeling.github.io/">Twitter</a>
 		</div>
 	</div>
 	<footer>
