@@ -8,7 +8,10 @@ var CD = 0;
 var CR = 0;
 var FThrough = 0;
 var MThrough = 0;
-var Absorption = 0;
+var FAbsorption = 0;
+var MAbsorption = 0;
+var HPRecovery = 0;
+var MPRecovery = 0;
 var Speed = 0;
 var ASpeed = 0;
 var Money = 0;
@@ -17,15 +20,17 @@ var Text="";
 function init(){
 	document.getElementById("states").innerHTML =
 	"<table border=\"1\">" +
-	"<tr><td>最大HP</td><td>" + 0 + "</td></tr>" +
-	"<tr><td>最大MP</td><td>" + 0 + "</td></tr>" +
-	"<tr><td>物理攻撃</td><td>" + 0 + "</td></tr>" +
-	"<tr><td>物理防御</td><td>" + 0 + "</td></tr>" +
-	"<tr><td>魔法攻撃</td><td>" + 0 + "</td></tr>" +
-	"<tr><td>魔法防御</td><td>" + 0 + "</td></tr>" +
-	"<tr><td>CD短縮</td><td>" + 0 + "</td></tr>" +
-	"<tr><td>CR率</td><td>" + 0 + "</td></tr>" +
-	"</table>";
+	"<tr><td>物理攻撃</td><td>" + FAttack + "</td>" + "<td>魔法攻撃</td><td>" + MAttack + "</td></tr>" + 
+	"<tr><td>物理防御</td><td>" + FDefence + "</td>" + "<td>魔法防御</td><td>" + MDefence + "</td></tr>" + 
+	"<tr><td>最大HP</td><td>" + HP + "</td>" + "<td>最大MP</td><td>" + MP + "</td></tr>" + 
+	"<tr><td>攻撃速度</td><td>" + ASpeed + "</td>" + "<td>CD短縮</td><td>" + CD + "</td></tr>" + 
+	"<tr><td>CR率</td><td>" + CR + "</td>" + "<td>移動速度</td><td>" + Speed + "</td></tr>" + 
+	"<tr><td>HP回復</td><td>" + HPRecovery + "</td>" + "<td>MP回復</td><td>" + MPRecovery + "</td></tr>" + 
+	"<tr><td>物理貫通</td><td>" + FThrough + "</td>" + "<td>魔法貫通</td><td>" + FThrough + "</td></tr>" + 
+	"<tr><td>HP吸収/物理</td><td>" + FAbsorption + "</td>" + "<td>HP吸収/魔法</td><td>" + FAbsorption + "</td></tr>" + 
+	"<tr><td>合計金額</td><td>" + Money + "</td></tr>" + 
+	"</table>" + Text
+	;
 }
 
 function update(){
@@ -39,7 +44,8 @@ function update(){
 	CR = 0;
 	FThrough = 0;
 	MThrough = 0;
-	Absorption = 0;
+	FAbsorption = 0;
+	MAbsorption = 0;
 	Speed = 0;
 	ASpeed = 0;
 	Money = 0;
@@ -136,14 +142,14 @@ function update(){
 
 	document.getElementById("states").innerHTML =
 	"<table border=\"1\">" +
-	"<tr><td>最大HP</td><td>" + HP + "</td></tr>" +
-	"<tr><td>最大MP</td><td>" + MP + "</td></tr>" +
-	"<tr><td>物理攻撃</td><td>" + FAttack + "</td></tr>" +
-	"<tr><td>物理防御</td><td>" + FDefence + "</td></tr>" +
-	"<tr><td>魔法攻撃</td><td>" + MAttack + "</td></tr>" +
-	"<tr><td>魔法防御</td><td>" + MDefence + "</td></tr>" +
-	"<tr><td>CD短縮</td><td>" + CD + "</td></tr>" +
-	"<tr><td>CR率</td><td>" + CR + "</td></tr>" + 
+	"<tr><td>物理攻撃</td><td>" + FAttack + "</td>" + "<td>魔法攻撃</td><td>" + MAttack + "</td></tr>" + 
+	"<tr><td>物理防御</td><td>" + FDefence + "</td>" + "<td>魔法防御</td><td>" + MDefence + "</td></tr>" + 
+	"<tr><td>最大HP</td><td>" + HP + "</td>" + "<td>最大MP</td><td>" + MP + "</td></tr>" + 
+	"<tr><td>攻撃速度</td><td>" + ASpeed + "</td>" + "<td>CD短縮</td><td>" + CD + "</td></tr>" + 
+	"<tr><td>CR率</td><td>" + CR + "</td>" + "<td>移動速度</td><td>" + Speed + "</td></tr>" + 
+	"<tr><td>HP回復</td><td>" + HPRecovery + "</td>" + "<td>MP回復</td><td>" + MPRecovery + "</td></tr>" + 
+	"<tr><td>物理貫通</td><td>" + FThrough + "</td>" + "<td>魔法貫通</td><td>" + FThrough + "</td></tr>" + 
+	"<tr><td>HP吸収/物理</td><td>" + FAbsorption + "</td>" + "<td>HP吸収/魔法</td><td>" + FAbsorption + "</td></tr>" + 
 	"<tr><td>合計金額</td><td>" + Money + "</td></tr>" + 
 	"</table>" + Text
 	;
