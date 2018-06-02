@@ -139,6 +139,35 @@ function update(){
 		Text += "<ul>【アサシン】敵の視界で隠れ身状態になると、次の通常攻撃時に物理ダメージがアップ。CD1秒</ul>";
 		Text += "<ul>【ホームスラスト】レベル×1の物理貫通を獲得</ul>";
 	}
+	if(document.getElementById("button100").innerText == "Release"){
+		Money += 800;
+		HP += 80;
+		Text += "<ul>【騎士】物理防御+10</ul>";
+		Text += "<ul>【靴】移動速度+45</ul>";
+	}
+	if(document.getElementById("button101").innerText == "Release"){
+		Money += 800;
+		HP += 80;
+		Text += "<ul>【ブーツ】魔法防御+20</ul>";
+		Text += "<ul>【靴】移動速度+45</ul>";
+	}
+	if(document.getElementById("button102").innerText == "Release"){
+		Money += 800;
+		MAttack += 25;
+		Text += "<ul>【エレメントブーツ】CD短縮+10％</ul>";
+		Text += "<ul>【靴】移動速度+45</ul>";
+	}
+	if(document.getElementById("button103").innerText == "Release"){
+		Money += 800;
+		FAttack += 5;
+		Text += "<ul>【ファイトスピリット】攻撃速度+8</ul>";
+		Text += "<ul>【靴】移動速度+45</ul>";
+	}
+	if(document.getElementById("button104").innerText == "Release"){
+		Money += 750;
+		Text += "<ul>【パイオニア】戦闘離脱後、移動速度+45、1秒ごとに40HPを回復する</ul>";
+		Text += "<ul>【靴】移動速度+45</ul>";
+	}
 
 	document.getElementById("states").innerHTML =
 	"<table border=\"1\">" +
@@ -292,6 +321,56 @@ function onClick14(){
 	}else{
 		document.getElementById("button14").innerText = "Set!";
 		document.getElementById("name14").style.color = "#000080";
+	}
+	update();
+}
+function onClick100(){
+	if(document.getElementById("button100").innerText == "Set!"){
+		document.getElementById("button100").innerText = "Release";
+		document.getElementById("name100").style.color = "#F00000";
+	}else{
+		document.getElementById("button100").innerText = "Set!";
+		document.getElementById("name100").style.color = "#000080";
+	}
+	update();
+}
+function onClick101(){
+	if(document.getElementById("button101").innerText == "Set!"){
+		document.getElementById("button101").innerText = "Release";
+		document.getElementById("name101").style.color = "#F00000";
+	}else{
+		document.getElementById("button101").innerText = "Set!";
+		document.getElementById("name101").style.color = "#000080";
+	}
+	update();
+}
+function onClick102(){
+	if(document.getElementById("button102").innerText == "Set!"){
+		document.getElementById("button102").innerText = "Release";
+		document.getElementById("name102").style.color = "#F00000";
+	}else{
+		document.getElementById("button102").innerText = "Set!";
+		document.getElementById("name102").style.color = "#000080";
+	}
+	update();
+}
+function onClick103(){
+	if(document.getElementById("button103").innerText == "Set!"){
+		document.getElementById("button103").innerText = "Release";
+		document.getElementById("name103").style.color = "#F00000";
+	}else{
+		document.getElementById("button103").innerText = "Set!";
+		document.getElementById("name103").style.color = "#000080";
+	}
+	update();
+}
+function onClick104(){
+	if(document.getElementById("button104").innerText == "Set!"){
+		document.getElementById("button104").innerText = "Release";
+		document.getElementById("name104").style.color = "#F00000";
+	}else{
+		document.getElementById("button104").innerText = "Set!";
+		document.getElementById("name104").style.color = "#000080";
 	}
 	update();
 }
