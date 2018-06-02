@@ -46,8 +46,6 @@ footer
 	width: 320px ;
 	border: 1px solid rgba(0,0,0,.1);
 	float: right;
-	position: -webkit-sticky;
-	top: 0px;
 }
 .itemName{
 	font-size: 19px;

@@ -5,7 +5,7 @@
 	<link href="style.css" rel="stylesheet">
 	<script src="BuildSimulator.js"></script>
 </head>
-<body>
+<body onload="init()">
 	<header>Hello World ~ Goodbye Dream!</header>
 	<div class="wrapper">
 		<div class="main">
@@ -55,15 +55,15 @@
 			<div class="item">
 				<div id="name7" class="itemName">クリムゾンブレード</div>
 				<li>攻撃速度+30%</li>
-				<li>【ジャギーエッジ】物理貫通+25%</li>
+				<li>CR率+15%</li>
+				<li>【ハリケーン】2秒間通常攻撃するたび自身の物理攻撃+5。最大10回累積可能</li>
 				<button id="button7" onclick="onClick7()">Set!</button> \2400
 			</div>
 			<div class="item">
 				<div id="name8" class="itemName">ジャギーブレード</div>
-				<li>物理攻撃+40%</li>
-				<li>CR率+15%</li>
-				<li>【ヘイスト】CR発生時に、2秒間自身の移動速度+20%</li>
-				<button id="butto8" onclick="onClick8()">Set!</button> \2200
+				<li>物理攻撃+40</li>
+				<li>【ジャギーエッジ】物理貫通+25%</li>
+				<button id="button8" onclick="onClick8()">Set!</button> \2200
 			</div>
 			<div class="item">
 				<div id="name9" class="itemName">リーチ</div>
