@@ -213,7 +213,84 @@ function update(){
 		Text += "<ul>【上達の狩人】モンスターを倒すとき最大HP+10、最大15スタックまで</ul>";
 		Text += "<ul>【紅蓮】周りの敵に1秒毎、15~43の魔法ダメージを与える</ul>";
 	}
-	
+	if(document.getElementById("button60").innerText == "Release"){
+		Money += 2000;
+		MAttack += 50;
+		HP += 150;
+		CD += 10;
+		Text += "<ul>【生贄】魔法ダメージの25％のHPを回復する</ul>";
+	}
+	if(document.getElementById("button61").innerText == "Release"){
+		Money += 2000;
+		HP += 300;
+		CD += 10;
+		Text += "<ul>【カタリシス】スキルで魔法ダメージを与えると、自身のHPを最大HPの10％分回復する。CD6秒</ul>";
+	}
+	if(document.getElementById("button62").innerText == "Release"){
+		Money += 2400;
+		MAttack += 80
+		Text += "<ul>【アンプリファイ】魔法攻撃+25％</ul>";
+	}
+	if(document.getElementById("button63").innerText == "Release"){
+		Money += 2400;
+		MAttack += 50;
+		ASpeed += 30;
+		Text += "<ul>【アルカニスト】通常攻撃3回ごとに魔法攻撃の70％分の魔法ダメージを追加</ul>";
+	}
+	if(document.getElementById("button64").innerText == "Release"){
+		Money += 2200;
+		MAttack += 30;
+		HP += 400;
+		Text += "<ul>【ミザリー】周囲800範囲にいる敵の魔法防御-15％</ul>";
+	}
+	if(document.getElementById("button65").innerText == "Release"){
+		Money += 2200;
+		MAttack += 40;
+		HP += 300;
+		CD += 10;
+		Text += "<ul>【ルーンパワー】スキル使用後、次の通常攻撃に魔法ダメージを追加</ul>";
+	}
+	if(document.getElementById("button66").innerText == "Release"){
+		Money += 2200;
+		MAttack += 50;
+		MP += 200;
+		CD += 10;
+		Text += "<ul>5秒ごとにＭＰを20回復</ul>";
+		Text += "<ul>【魔力の源】戦闘離脱後ＭＰを回復する</ul>";
+	}
+	if(document.getElementById("button67").innerText == "Release"){
+		Money += 2200;
+		MAttack += 80;
+		MThrough += 5;
+		Text += "<ul>【サンダーボルト】スキルに稲妻を付加し、ターゲットとその周囲の敵に50+10%の魔法ダメージを与える。</ul>";
+	}
+	if(document.getElementById("button68").innerText == "Release"){
+		Money += 2200;
+		MAttack += 40;
+		HP += 300;
+		CD += 10;
+		Text += "<ul>【カース】魔法ダメージを与え、ターゲットとその周囲の敵4体にカース効果を付加して、現在ＨＰの5％の魔法ダメージを持続的に与える</ul>";
+	}
+	if(document.getElementById("button69").innerText == "Release"){
+		Money += 2200;
+		MAttack += 40;
+		FDefence += 10;
+		MDefence += 10;
+		Text += "<ul>【マジックバリア】HP30%未満時にバリアを獲得。吸収するダメージはレベル成長と魔法攻撃ボーナスによって異なる</ul>";
+	}
+	if(document.getElementById("button70").innerText == "Release"){
+		Money += 2000;
+		MAttack += 60;
+		Text += "<ul>【ルイン】魔法貫通+30％</ul>";
+	}
+	if(document.getElementById("button71").innerText == "Release"){
+		Money += 1800;
+		MAttack += 50;
+		MP += 300;
+		CD += 10;
+		Text += "<ul>【フリジッド】スキルでダメージを与えた敵の移動速度-20％</ul>";
+	}
+
 	if(document.getElementById("button100").innerText == "Release"){
 		Money += 800;
 		HP += 80;
@@ -516,6 +593,126 @@ function onClick41(){
 	}else{
 		document.getElementById("button41").innerText = "Set!";
 		document.getElementById("name41").style.color = "#000080";
+	}
+	update();
+}
+function onClick60(){
+	if(document.getElementById("button60").innerText == "Set!"){
+		document.getElementById("button60").innerText = "Release";
+		document.getElementById("name60").style.color = "#F00000";
+	}else{
+		document.getElementById("button60").innerText = "Set!";
+		document.getElementById("name60").style.color = "#000080";
+	}
+	update();
+}
+function onClick61(){
+	if(document.getElementById("button61").innerText == "Set!"){
+		document.getElementById("button61").innerText = "Release";
+		document.getElementById("name61").style.color = "#F00000";
+	}else{
+		document.getElementById("button61").innerText = "Set!";
+		document.getElementById("name61").style.color = "#000080";
+	}
+	update();
+}
+function onClick62(){
+	if(document.getElementById("button62").innerText == "Set!"){
+		document.getElementById("button62").innerText = "Release";
+		document.getElementById("name62").style.color = "#F00000";
+	}else{
+		document.getElementById("button62").innerText = "Set!";
+		document.getElementById("name62").style.color = "#000080";
+	}
+	update();
+}
+function onClick63(){
+	if(document.getElementById("button63").innerText == "Set!"){
+		document.getElementById("button63").innerText = "Release";
+		document.getElementById("name63").style.color = "#F00000";
+	}else{
+		document.getElementById("button63").innerText = "Set!";
+		document.getElementById("name63").style.color = "#000080";
+	}
+	update();
+}
+function onClick64(){
+	if(document.getElementById("button64").innerText == "Set!"){
+		document.getElementById("button64").innerText = "Release";
+		document.getElementById("name64").style.color = "#F00000";
+	}else{
+		document.getElementById("button64").innerText = "Set!";
+		document.getElementById("name64").style.color = "#000080";
+	}
+	update();
+}
+function onClick65(){
+	if(document.getElementById("button65").innerText == "Set!"){
+		document.getElementById("button65").innerText = "Release";
+		document.getElementById("name65").style.color = "#F00000";
+	}else{
+		document.getElementById("button65").innerText = "Set!";
+		document.getElementById("name65").style.color = "#000080";
+	}
+	update();
+}
+function onClick66(){
+	if(document.getElementById("button66").innerText == "Set!"){
+		document.getElementById("button66").innerText = "Release";
+		document.getElementById("name66").style.color = "#F00000";
+	}else{
+		document.getElementById("button66").innerText = "Set!";
+		document.getElementById("name66").style.color = "#000080";
+	}
+	update();
+}
+function onClick67(){
+	if(document.getElementById("button67").innerText == "Set!"){
+		document.getElementById("button67").innerText = "Release";
+		document.getElementById("name67").style.color = "#F00000";
+	}else{
+		document.getElementById("button67").innerText = "Set!";
+		document.getElementById("name67").style.color = "#000080";
+	}
+	update();
+}
+function onClick68(){
+	if(document.getElementById("button68").innerText == "Set!"){
+		document.getElementById("button68").innerText = "Release";
+		document.getElementById("name68").style.color = "#F00000";
+	}else{
+		document.getElementById("button68").innerText = "Set!";
+		document.getElementById("name68").style.color = "#000080";
+	}
+	update();
+}
+function onClick69(){
+	if(document.getElementById("button69").innerText == "Set!"){
+		document.getElementById("button69").innerText = "Release";
+		document.getElementById("name69").style.color = "#F00000";
+	}else{
+		document.getElementById("button69").innerText = "Set!";
+		document.getElementById("name69").style.color = "#000080";
+	}
+	update();
+}
+function onClick70(){
+	if(document.getElementById("button70").innerText == "Set!"){
+		document.getElementById("button70").innerText = "Release";
+		document.getElementById("name70").style.color = "#F00000";
+	}else{
+		document.getElementById("button70").innerText = "Set!";
+		document.getElementById("name70").style.color = "#000080";
+	}
+	update();
+}
+function onClick71(){
+	if(document.getElementById("button71").innerText == "Set!"){
+		document.getElementById("button71").innerText = "Release";
+		document.getElementById("name71").style.color = "#F00000";
+	}else{
+		document.getElementById("button71").innerText = "Set!";
+		document.getElementById("name71").style.color = "#000080";
 	}
 	update();
 }
