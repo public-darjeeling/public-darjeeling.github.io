@@ -206,13 +206,6 @@ function update(){
 		HP += 500;
 		Text += "<ul>【底力】HP30％未満時に底力を発揮し、物理攻撃+25、かつ強力なバリアを獲得。８秒間持続</ul>";
 	}
-	if(document.getElementById("button41").innerText == "Release"){
-		Money += 1600;
-		HP += 300;
-		Text += "<ul>【狩猟】モンスターへのダメージ30％アップ、モンスターを倒すとき経験値30％アップ</ul>";
-		Text += "<ul>【上達の狩人】モンスターを倒すとき最大HP+10、最大15スタックまで</ul>";
-		Text += "<ul>【紅蓮】周りの敵に1秒毎、15~43の魔法ダメージを与える</ul>";
-	}
 	if(document.getElementById("button60").innerText == "Release"){
 		Money += 2000;
 		MAttack += 50;
@@ -319,6 +312,27 @@ function update(){
 		Money += 750;
 		Text += "<ul>【パイオニア】戦闘離脱後、移動速度+45、1秒ごとに40HPを回復する</ul>";
 		Text += "<ul>【靴】移動速度+45</ul>";
+	}
+	if(document.getElementById("button120").innerText == "Release"){
+		Money += 1600;
+		MAttack += 25;
+		MP += 300;
+		Text += "<ul>【狩猟】モンスターへのダメージ30％アップ、モンスターを倒すとき経験値30％アップ</ul>";
+		Text += "<ul>【上達の狩人】モンスターを倒すとき魔法攻撃1アップ、最大15スタックまで</ul>";
+	}
+	if(document.getElementById("button121").innerText == "Release"){
+		Money += 1600;
+		HP += 300;
+		Text += "<ul>【狩猟】モンスターへのダメージ30％アップ、モンスターを倒すとき経験値30％アップ</ul>";
+		Text += "<ul>【上達の狩人】モンスターを倒すとき最大HP+10、最大15スタックまで</ul>";
+		Text += "<ul>【紅蓮】周りの敵に1秒毎、15~43の魔法ダメージを与える</ul>";
+	}
+	if(document.getElementById("button122").innerText == "Release"){
+		Money += 1600;
+		FAttack += 20;
+		ASpeed += 5;
+		Text += "<ul>【狩猟】モンスターへのダメージ30％アップ、モンスターを倒すとき経験値30％アップ</ul>";
+		Text += "<ul>【上達の狩人】モンスターを倒すとき攻撃+1%、最大15スタックまで</ul>";
 	}
 
 	document.getElementById("states").innerHTML =
@@ -586,16 +600,6 @@ function onClick40(){
 	}
 	update();
 }
-function onClick41(){
-	if(document.getElementById("button41").innerText == "Set!"){
-		document.getElementById("button41").innerText = "Release";
-		document.getElementById("name41").style.color = "#F00000";
-	}else{
-		document.getElementById("button41").innerText = "Set!";
-		document.getElementById("name41").style.color = "#000080";
-	}
-	update();
-}
 function onClick60(){
 	if(document.getElementById("button60").innerText == "Set!"){
 		document.getElementById("button60").innerText = "Release";
@@ -763,6 +767,36 @@ function onClick104(){
 	}else{
 		document.getElementById("button104").innerText = "Set!";
 		document.getElementById("name104").style.color = "#000080";
+	}
+	update();
+}
+function onClick120(){
+	if(document.getElementById("button120").innerText == "Set!"){
+		document.getElementById("button120").innerText = "Release";
+		document.getElementById("name120").style.color = "#F00000";
+	}else{
+		document.getElementById("button120").innerText = "Set!";
+		document.getElementById("name120").style.color = "#000080";
+	}
+	update();
+}
+function onClick121(){
+	if(document.getElementById("button121").innerText == "Set!"){
+		document.getElementById("button121").innerText = "Release";
+		document.getElementById("name121").style.color = "#F00000";
+	}else{
+		document.getElementById("button121").innerText = "Set!";
+		document.getElementById("name121").style.color = "#000080";
+	}
+	update();
+}
+function onClick122(){
+	if(document.getElementById("button122").innerText == "Set!"){
+		document.getElementById("button122").innerText = "Release";
+		document.getElementById("name122").style.color = "#F00000";
+	}else{
+		document.getElementById("button122").innerText = "Set!";
+		document.getElementById("name122").style.color = "#000080";
 	}
 	update();
 }

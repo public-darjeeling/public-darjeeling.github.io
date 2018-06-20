@@ -34,6 +34,9 @@ summary{
 	font-weight: 100;
 	padding: 3px 0;
 }
+table{
+	width:300px;
+}
 .wrapper
 {
 	width: 1000px ;
@@ -73,7 +76,12 @@ summary{
 	border-radius: 5px;
 }
 
-
+.twitter{
+	background-color: #55acee;
+	text-align: center;
+	height: 50px;
+	width: 300px;
+}
 
 /* スマホだけに適用するCSS */
 @media screen and ( max-width:479px )
