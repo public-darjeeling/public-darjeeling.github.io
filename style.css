@@ -76,12 +76,6 @@ table{
 	border-radius: 5px;
 }
 
-.twitter{
-	background-color: #55acee;
-	text-align: center;
-	height: 50px;
-	width: 300px;
-}
 
 /* スマホだけに適用するCSS */
 @media screen and ( max-width:479px )

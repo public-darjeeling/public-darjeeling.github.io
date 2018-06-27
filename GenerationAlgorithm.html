@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>OneMax問題</title>
+	<script type="text/javascript" src="GenerationAlgorithm.js"></script>
+</head>
+<body>
+	<h1>遺伝的アルゴリズム</h1>
+	<h3>OneMax問題</h3>
+	<div>
+		遺伝子長さ<input id="length" type="number" placeholder="1 - 300" /><br>
+		遺伝子個数<input id="number" type="number" placeholder="1 - 300" /><br>
+		エリート遺伝子数<input id="eliteNumber" type="number" placeholder="1 - 300 < 遺伝子個数"><br>
+		個体突然変異率<input id="individualMutation" type="number" placeholder="0.1 - 10%" /><br>
+		遺伝子突然変異率<input id="genomMutation" type="number" placeholder="0.1 - 10%"/><br>
+		演算世代数<input id="maxGeneration" type="number" placeholder="10 - 300"/><br>
+		<input type="button" value="演算！" onclick="onClick()" />
+	</div>
+	<div id="log"></div>
+</body>
+</html>
