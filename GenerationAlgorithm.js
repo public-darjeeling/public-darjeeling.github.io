@@ -1,23 +1,3 @@
-class Genom{
-	constructor(genomList,evaluation){
-		this.genomList = genomList;
-		this.evaluation = evaluation;
-	}
-
-	getGenom(){
-		return this.genomList;
-	}
-	getEvaluation(){
-		return this._evaluation;
-	}
-	setGenom(genomList){
-		this.genomList = genomList;
-	}
-	setEvaluation(evaluation){
-		this._evaluation = evaluation;
-	}
-}
-
 function onClick(){
 	GENOM_LENGTH = parseInt(document.getElementById('length').value,10);
 	MAX_GENOM_LIST = parseInt(document.getElementById('number').value,10);
@@ -33,21 +13,19 @@ function onClick(){
  * メイン演算関数
  */
 function main(){
-	var group = new Array(MAX_GENOM_LIST);
-	for( i = 0; i < MAX_GENOM_LIST; i++){
-		group[i] = createGenom(GENOM_LENGTH);
-		alert(group[i] instanceof Genom);
-
+	let group = new Array(10);
+	for(let j = 0; j < MAX_GENOM_LIST; j++){
+		g = createGenom(GENOM_LENGTH);
+		group[j] = g;
 	}
-	for(count = 0;count < MAX_GENERATION;i++){
-		for(i = 0;i < MAX_GENOM_LIST;i++){
-			
+	for(let count = 0;count < MAX_GENERATION;i++){
+		for(let i = 0;i < MAX_GENOM_LIST;i++){	
 			evaluationResult = evaluation(group[i]);
 			group[i].setEvaluation(evaluationResult);
 		}
-		eliteGenes = select(group,SELECT_GENOM);
-		progenyGenes = Array(SELECT_GENOM);
-		for(i = 1;i < SELECT_GENOM;i++){
+		let eliteGenes = select(group,SELECT_GENOM);
+		let progenyGenes = Array(SELECT_GENOM);
+		for(let i = 1;i < SELECT_GENOM;i++){
 			progenyGenes.push(crossover(eliteGenes[i - 1],eliteGenes[i]));
 		}
 		group = createNextGeneration(group,eliteGenes,progenyGenes);
@@ -56,10 +34,10 @@ function main(){
 		document.getElementById('log').innerHTML = 
 		document.getElementById('log').value + 
 		"<h2>第" + count + "世代</h2>" + 
-		"<div>Min = " + min(group,function (a) {return a.getEvaluation()}) + "</div>" + 
-		"<div>Max = " + max(group,function (a) {return a.getEvaluation()}) + "</div>" + 
-		"<div>Avg = " + sum(group,function (a) {return a.getEvaluation()}) / group.length + "</div>" + 
-		"<div>The best = " + elite[0].getGenom() + "</div>";
+		"<div>Min = " + min(group,function (ge) {return ge}) + "</div>" + 
+		"<div>Max = " + max(group,function (ge) {return ge}) + "</div>" + 
+		"<div>Avg = " + sum(group,function (ge) {return ge}) / group.length + "</div>" + 
+		"<div>The best = " + eliteGenes[0].getGenom() + "</div>";
 
 	}
 }
@@ -70,12 +48,12 @@ function main(){
  * @return 生成した個体集団 genomClass
  */
 function createGenom(length){
-	var genomList = new Array(GENOM_LENGTH);
+	let genomList = new Array(GENOM_LENGTH);
 	for(i = 0;i < length;i++){
 		genomList.push(Math.floor(Math.random() * 2));
 	}
-	genom = new Genom(genomList,0);
-	return genom;
+	ge = new Genom(genomList,0);
+	return ge;
 }
 
 /**
@@ -84,8 +62,8 @@ function createGenom(length){
  * @return 0.00 ~ 1.00の評価
  */
 function evaluation(genom){
-	total = sum(genom.getGenom(),function (genom) {
-		return genom;
+	total = sum(genom.getGenom(),function (ge) {
+		return ge;
 	});
 	return total / genom.getGenom.length;
 }
@@ -98,7 +76,7 @@ function evaluation(genom){
  */
 function select(genom,elite){
 	result = sort(genom,function (a,b) {
-		return a.evaluation > b.evaluation;
+		return a.getEvaluation() > b.getEvaluation();
 	});
 	return result.slice(0,elite);
 }
@@ -110,7 +88,7 @@ function select(genom,elite){
  * @return 子孫を格納したgenomClass配列
  */
  function crossover(genomA,genomB){
- 	var genomList = new Array(2);
+ 	let genomList = new Array(2);
  	crossA = Math.random(0,GENOM_LENGTH);
  	crossB = Math.random(crossA, GENOM_LENGTH);
  	A = genomA.getGenom();
@@ -133,8 +111,8 @@ function select(genom,elite){
 		for(i = crossB;i < GENOM_LENGTH;i++)
 			progenyB[i] = B[i];
 	}
-	genomList[0] = Genom(progenyA,0);
-	genomList[1] = Genom(progenyB,0);
+	genomList[0] = new Genom(progenyA,0);
+	genomList[1] = new Genom(progenyB,0);
 	return genomList;
  }
 
@@ -153,6 +131,7 @@ function createNextGeneration(genom,elite,progeny){
 		nextGeneration.shift();
 	nextGeneration.push(elite);
 	nextGeneration.push(progeny);
+	return nextGeneration;
 }
 /**
  * 突然変異関数
@@ -161,48 +140,49 @@ function createNextGeneration(genom,elite,progeny){
  * @param 遺伝子の突然変異率
  * @param 突然変異をしたgenomClass配列
  */
-function mutation(genom,individualMutation,genomMutation){
+function mutation(genom){
 	individualList = new Array(genom.length);
 	for(i = 0;i < genom.length;i++){
-		if(individualMutation > (Math.random()) * 100){
-			genomList = new Array(genom[i].genomList.length);
+		if(INDIVIDUAL_MATATION > (Math.random()) * 100){
+			genomList = new Array(genom[i].getGenom().length);
 			for(j = 0;j < genom[i].length;j++){
-				if(genomMutation > (Math.random() * 100))
+				if(GENOM_MUTATION > (Math.random() * 100))
 					genomList.push(Math.floor(Math.random() * 2));
 				else
 					genomList.push(genom[i].getGenom());
 			}
 			genom[i].setGenom(genomList);
 		}
-		individualList.push(genom[i]);
+		individualList[i] = genom[i];
 	}
 	return individualList;
 }
 
 function min(array,callback){
 	ans = callback(array[0]);
-	for(i = 1;i < array.length;i++)
+	for(let i = 1;i < array.length;i++){
 		if(ans > callback(array[i]))
 			ans = callback(array[i]);
+	}
 	return ans;
 }
 function max(array,callback){
 	ans = callback(array[0]);
-	for(i = 1;i < array.length;i++)
+	for(let i = 1;i < array.length;i++)
 		if(ans > callback(array[i]))
 			ans = callback(array[i]);
 	return ans;
 }
 function sum(array,callback){
 	total = 0;
-	for(i = 0;i < array.length;i++)
+	for(let i = 0;i < array.length;i++)
 		total += callback(array[i]);
 	return total;
 }
 function sort(array,callback){
-	var newArray = array.concat();
-	for(i = 0;i < newArray.length - 1;i++){
-		for(j = i + 1;j < newArray.length;j++){
+	let newArray = array.concat();
+	for(let i = 0;i < newArray.length - 2;i++){
+		for(let j = i + 1;j < newArray.length - 1;j++){
 			if(callback(newArray[i],newArray[j])){
 				num = newArray[i];
 				newArray[i] = newArray[j];
@@ -211,4 +191,24 @@ function sort(array,callback){
 		}
 	}
 	return newArray;
+}
+
+class Genom{
+	constructor(genomList,evaluation){
+		this.genomList = genomList;
+		this.evaluation = evaluation;
+	}
+
+	getGenom(){
+		return this.genomList;
+	}
+	getEvaluation(){
+		return this.evaluation;
+	}
+	setGenom(genomList){
+		this.genomList = genomList;
+	}
+	setEvaluation(evaluation){
+		this.evaluation = evaluation;
+	}
 }
