@@ -22,14 +22,56 @@
 	<header>Public Darjeeling Github.IO!!</header>
 	<div class="wrapper">
 		<div class="main">
-			<h1>zaShi ᔓimulator</h1>
-		</div>
-		<div class="side">
+			<h1>zaShi <span class="mirror-text">S</span>imulator!!</h1>
+			
+			<h2>How to zaShi Simulator?</h2>
+			<div>ある自然数Xに対して0 <= A,B,C,D <= Xを取る変数A,B,C,Dがあるとき、<br>
+				A+B+C+D <= X を満たす確率はどれくらいかをシミューレーションします</div>
+			<br>
+
 			最大値X = <input id="inputX" type="number"></input><br>
 			試行回数N = <input id="inputN" type="number"></input><br>
 			<input type="button" onClick="onClick()" value="演算"></input>
-			<br><br><br>
+			<br><br>
 			<div id="output"></div>
+
+			<h2>How to do?</h2>
+			<pre style="background-color: #364646 ; color: #F0F0F0 ; overflow-x : scroll ; position: relative; right: 10px;">
+function onClick(){
+	// 入力されたX,Nを取得する
+	let X = document.getElementById('inputX').value;
+	let N = document.getElementById('inputN').value;
+	// 式を満たしたときカウントする変数を定義する
+	let ans = 0;
+	// 表示された試行を消す
+	console.clear();
+
+	for(i = 0;i < N;i++){
+		// A,B,C,Dそれぞれに0からXまでの乱数を与える
+		// 具体的には、Math.random()が0～1の数字をランダムで与えるので
+		// それにXを掛けることで0からXまでの実数が与えられる
+		// それをMath.floorで整数にしている(小数切り捨て)
+		var A = Math.floor(Math.random() * X);
+		var B = Math.floor(Math.random() * X);
+		var C = Math.floor(Math.random() * X);
+		var D = Math.floor(Math.random() * X);
+		
+		// A,B,C,Dと合計を表示する
+		console.log("A:" + A + " B:" + B + " C:" + C + " D:" + D + " SUM:" + (A + B + C + D));
+		// 式を満たしていた時ansを一つ増やす
+		if(X >= A + B + C + D)
+			ans++;
+	}
+	// 成功回数/試行回数*100を行う
+	// 確率を%で表示するため
+	var answer = 100 * ans / N;
+	// 結果を表示する
+	document.getElementById('output').innerHTML = "確率 = " + answer + " %";
+}
+			</pre>
+		</div>
+		<div class="side">
+			
 		</div>
 	</div>
 	<footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>

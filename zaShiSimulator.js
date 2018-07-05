@@ -1,11 +1,7 @@
-let X = 0;
-let Y = 0;
-let ans = 0;
-
 function onClick(){
-	X = document.getElementById('inputX').value;
-	N = document.getElementById('inputN').value;
-	ans = 0;
+	let X = document.getElementById('inputX').value;
+	let N = document.getElementById('inputN').value;
+	let ans = 0;
 	console.clear();
 
 	for(i = 0;i < N;i++){
@@ -20,5 +16,4 @@ function onClick(){
 	}
 	var answer = 100 * ans / N;
 	document.getElementById('output').innerHTML = "確率 = " + answer + " %";
-
 }

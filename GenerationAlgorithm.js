@@ -20,8 +20,7 @@ function main(){
 	}
 	for(let count = 0;count < MAX_GENERATION;i++){
 		for(let i = 0;i < MAX_GENOM_LIST;i++){	
-			evaluationResult = evaluation(group[i]);
-			group[i].setEvaluation(evaluationResult);
+			group[i].setEvaluation(evaluation(group[i]));
 		}
 		let eliteGenes = select(group,SELECT_GENOM);
 		let progenyGenes = Array(SELECT_GENOM);
