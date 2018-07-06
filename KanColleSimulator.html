@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-121054999-1');
+	</script>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>zaShiSimulator!!</title>
+	<script type="text/javascript" src="KanColleSimulator.js"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<header>Public Darjeeling Github.IO!!</header>
+	<div class="wrapper">
+		<div class="main">
+			<h1>KanColle Simulator!!</h1>
+			
+			<h2>How to KanColle Simulator?</h2>
+			<div>ある自然数Xと乱数A,B,C,Dがあるとき、<br>
+				A+B+C+D <= X を満たす確率はどれくらいかをシミューレーションします</div>
+			<br>
+			
+			最大値X = <input id="inputX" type="number" value="100"></input><br>
+			試行回数N = <input id="inputN" type="number" value="10000"></input><br>
+			Aの範囲 =　<input type="number" id="inputMinA" value="0"> ~ <input type="number" id="inputMaxA" value="100"><br>
+			Bの範囲 =　<input type="number" id="inputMinB" value="0"> ~ <input type="number" id="inputMaxB" value="100"><br>
+			Cの範囲 =　<input type="number" id="inputMinC" value="0"> ~ <input type="number" id="inputMaxC" value="100"><br>
+			Dの範囲 =　<input type="number" id="inputMinD" value="0"> ~ <input type="number" id="inputMaxD" value="100"><br>
+			<input type="button" onClick="onClick()" value="演算"></input>
+			<br><br>
+			<div id="output"></div>
+
+			<h2>How to do?</h2>
+			<pre style="background-color: #364646 ; color: #F0F0F0 ; overflow-x : scroll ; position: relative; right: 10px;">
+function onClick(){
+	// 入力されたX,Nと変数A ~ Dの取り得る範囲を取得する
+	let X = parseInt(document.getElementById('inputX').value);
+	let N = parseInt(document.getElementById('inputN').value);
+	let MIN_A = parseInt(document.getElementById('inputMinA').value);
+	let MIN_B = parseInt(document.getElementById('inputMinB').value);
+	let MIN_C = parseInt(document.getElementById('inputMinC').value);
+	let MIN_D = parseInt(document.getElementById('inputMinD').value);
+	let MAX_A = parseInt(document.getElementById('inputMaxA').value);
+	let MAX_B = parseInt(document.getElementById('inputMaxB').value);
+	let MAX_C = parseInt(document.getElementById('inputMaxC').value);
+	let MAX_D = parseInt(document.getElementById('inputMaxD').value);
+
+	// 式を満たしたときカウントする変数を定義する
+	let ans = 0;
+	// 表示された試行を消す
+	console.clear();
+
+	for(i = 0;i < N;i++){
+		// A,B,C,Dそれぞれに0からXまでの乱数を与える
+		// 具体的には、Math.random()が0～1の数字をランダムで与えるので
+		// それに(MAX_K - MIN_K)を掛けることで0~(MAX_K - MIN_K)の実数が与えられる
+		// それにMIN_Kを足すことでMIN_K ~ MAX_Kの乱数を取得することができる
+		// それをMath.floorで整数にしている(小数切り捨て)
+		var a = Math.floor(Math.random() * (MAX_A - MIN_A)) + MIN_A;
+		var b = Math.floor(Math.random() * (MAX_B - MIN_B)) + MIN_B;
+		var c = Math.floor(Math.random() * (MAX_C - MIN_C)) + MIN_C;
+		var d = Math.floor(Math.random() * (MAX_D - MIN_D)) + MIN_D;
+		
+		// A,B,C,Dと合計を表示する
+		console.log("A:" + a + " B:" + b + " C:" + c + " D:" + d + " SUM:" + (a + b + c + d));
+		// 式を満たしていた時ansを一つ増やす
+		if(X >= a + b + c + d)
+			ans++;
+	}
+	// 成功回数/試行回数*100を行う
+	// 確率を%で表示するため
+	var answer = 100 * ans / N;
+	// 結果を表示する
+	document.getElementById('output').innerHTML = "確率 = " + answer + " %";
+}
+			</pre>
+		</div>
+		<div class="side">
+			
+		</div>
+	</div>
+	<footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
+</body>
+</html>
