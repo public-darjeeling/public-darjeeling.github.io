@@ -16,9 +16,10 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <title>zaShiSimulator!!</title>
 	<script type="text/javascript" src="KanColleSimulator.js"></script>
+	<script type="text/javascript" src="newsList.js"></script>
 	<link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body onload="init()">
 	<header>Public Darjeeling Github.IO!!</header>
 	<div class="wrapper">
 		<div class="main">
@@ -85,7 +86,7 @@ function onClick(){
 			</pre>
 		</div>
 		<div class="side">
-			
+			<div id="newsList"></div>
 		</div>
 	</div>
 	<footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>

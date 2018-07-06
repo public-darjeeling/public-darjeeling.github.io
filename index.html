@@ -10,10 +10,11 @@
 
 	  gtag('config', 'UA-121054999-1');
 	</script>
+	<script type="text/javascript" src="newsList.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body onload="init()">
 	<header>Public Darjeeling Github.IO!!</header>
 	<div class="wrapper">
 		<div class="main">
@@ -24,9 +25,7 @@
 			</h3>
 		</div>
 		<div class="side">
-			<h2>News List</h2>
-			<h4><a href="BuildSimulator.html">Build Simulator</a></h4>
-			<h4>記事2</h4>
+			<div id="newsList"></div>
 
 		</div>
 	</div>
