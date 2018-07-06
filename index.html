@@ -10,19 +10,32 @@
 
 	  gtag('config', 'UA-121054999-1');
 	</script>
-	<script type="text/javascript" src="newsList.js"></script>
+	<script type="text/javascript" src="init.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href="style.css" rel="stylesheet">
 </head>
 <body onload="init()">
-	<header>Public Darjeeling Github.IO!!</header>
+	<header id="title"></header>
+	<div id="logo"></div>
 	<div class="wrapper">
 		<div class="main">
-			<h1>This is Test for "Responsive Design!"</h1>
-			<h3>これはレスポンシブウェブデザインのサイトです。<br>
-				もしもお手元にスマートフォンがあったらこのサイトを開いてみてください<br>
-				配置とかが違くなっているはずです！
-			</h3>
+			<h1>Welcome to Darjeeling's WebSite!!</h1>
+			<div class="item">
+				<div class="itemName"><a href="BuildSimulator.html">ビルドシミュレーター for War Song</a></div>
+				これは「War Song」のビルドをシミュレートする非公式のサービスとなっています。<br>
+				新キャラの登場時など、ビルドを考えたいときにお試しください！
+			</div>
+			<div class="item">
+				<div class="itemName"><a href="KanColleSimulator.html">艦これシミュレーター</a></div>
+				「艦隊コレクション」のボスがどれくらいの確率で倒せるのかという非公式のサービスとなっています。<br>
+				艦これ以外でもボスを倒せるかを考えたいときにお使いください！
+			</div>
+			<div class="item">
+				<div class="itemName"><a href="GenerationAlgorithm.html">遺伝的アルゴリズム(OneMax問題)</a></div>
+				遺伝的アルゴリズムを使ってOneMax問題を解くWebサイトとなっています(未完成)<br>
+				まだ完成していないのでアドバイスを頂けたら幸いです<br>
+				参考:<a href="https://qiita.com/Azunyan1111/items/975c67129d99de33dc21">【初心者向け】Re:ゼロから始める遺伝的アルゴリズム【人工知能】</a>
+			</div>
 		</div>
 		<div class="side">
 			<div id="newsList"></div>
