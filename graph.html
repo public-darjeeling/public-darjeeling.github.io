@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-121054999-1');
+	</script>
+	<script type="text/javascript" src="init.js" defer></script>
+	<script type="text/javascript" src="graph.js" defer></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body onload="init()">
+	<header id="title"></header>
+	<div id="logo"></div>
+	<div class="wrapper">
+		<div class="main">
+			<h1>3次元グラフを描く！</h1>
+			y = <br><input type="number" id="xxx" value="0" step="0.01">x^3 + <br><input type="number" id="xx" value="0" step="0.01">x^2 + <br><input type="number" id="x" value="0" step="0.01">x + <br><input type="number" id="n" value="0" step="0.01">
+			<input type="button" value="Draw!!" onclick="onClick()"><br>
+			<canvas id="canvas" width="400" height="400">
+		</div>
+		<div class="side">
+			<div id="newsList"></div>
+
+		</div>
+	</div>
+	<footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
+</body>
+</html>
