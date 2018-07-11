@@ -42,7 +42,7 @@ function onClick(){
 
 	    console.log("x : " + (i * 4) + " y : " + (xxx * Math.pow(i,3) + xx * Math.pow(i,2) + x * Math.pow(i,1) + n) * 0.4);
         ctx.moveTo(i * 4 + 199,((xxx * Math.pow(i,3) + xx * Math.pow(i,2) + x * Math.pow(i,1) + n) * -0.4) + 200);
-        ctx.lineTo(i * 4 + 201,((xxx * Math.pow(i,3) + xx * Math.pow(i,2) + x * Math.pow(i,1) + n) * -0.4) + 200);
+        ctx.lineTo((i + 1) * 4 + 201,((xxx * Math.pow(i + 1,3) + xx * Math.pow(i + 1,2) + x * Math.pow(i + 1,1) + n) * -0.4) + 200);
         ctx.stroke(); //線の終了
 	}
 
