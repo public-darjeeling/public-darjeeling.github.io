@@ -20,6 +20,20 @@ function onClick(){
 	
 }
 
+class Node{
+	constructor (canvas,tag,x,y,text){
+		this.canvas = canvas;
+		this.tag = tag;
+		this.x = x;
+		this.y = y;
+		this.text = text;
+		this.style = "padding-top: " + y + "px;padding-left:" + x + "px";
+	}
+	install(){
+		document.getElementById('form').innerHTML += "<" + this.tag + " style=\"" + this,style + "\">" + this.text + "</" + this.tag + ">";
+	}
+}
+
 class Button {
 	constructor (x, y, width, height, text) {
 		this.x = x;
