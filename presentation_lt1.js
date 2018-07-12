@@ -1,23 +1,27 @@
 var canvas;
-let ctx;
-
-canvas = document.getElementById('canvas');
-ctx = canvas.getContext('2d');
-ctx.strokeRect(0,0,400,400);
-
-ctx.beginPath();
-ctx.moveTo(0,200);
-ctx.lineTo(400,200);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.moveTo(200,0);
-ctx.lineTo(200,400);
-ctx.stroke();
+var controller;
+var ctz;
 
 
-function onClick(){
-	
+function init(){
+	canvas = document.getElementById('canvas');
+	controller = new CPUController(canvas);
+	ctx = canvas.getContext('2d');
+	ctx.strokeRect(0,0,400,400);
+
+	node = controller.createObject("div","title",10,10);
+	node.install();
+}
+
+class CPUController{
+	constructor(canvas){
+		this.canvas = canvas;
+		document.getElementById('form').style = "position:relative";
+	}
+	createObject(tag,text,x,y){
+		var object = new Node(canvas,tag,x,y,text);
+		return object;
+	}
 }
 
 class Node{
@@ -26,11 +30,11 @@ class Node{
 		this.tag = tag;
 		this.x = x;
 		this.y = y;
-		this.text = text;
-		this.style = "padding-top: " + y + "px;padding-left:" + x + "px";
+		this.string = text;
+		this.style = "padding-top: " + y + "px;padding-left:" + x + "px;position:absolute;";
 	}
 	install(){
-		document.getElementById('form').innerHTML += "<" + this.tag + " style=\"" + this,style + "\">" + this.text + "</" + this.tag + ">";
+		document.getElementById('form').innerHTML += "<" + this.tag + " style=\"" + this.style + "\">" + this.string + "</" + this.tag + ">";
 	}
 }
 
@@ -41,12 +45,6 @@ class Button {
 		this.width = width;
 		this.height = height;
 		this.text = text;
-	}
-
-	install(canvas){
-		var ctx = canvas.getContext('2d');
-		ctx.strokeRect(this.x,this.y,this.width,this.height);
-		ctx.fillText(this.text,(this.x + this.x + this.width) / 2,(this.y + this.y + this.height) / 2);
 	}
 
 	onClick(e){
@@ -66,12 +64,6 @@ class label {
 		this.width = width;
 		this.height = height;
 		this.text = text;
-	}
-
-	install(canvas){
-		var ctx = canvas.getContext('2d');
-		ctx.strokeRect(this.x,this.y,this.width,this.height);
-		ctx.fillText(this.text,(this.x + this.x + this.width) / 2,(this.y + this.y + this.height) / 2);
 	}
 }
 
