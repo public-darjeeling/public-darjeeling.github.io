@@ -9,5 +9,6 @@ function init(){
 	"<li><a href=\"BuildSimulator.html\">ビルドシミュレーター for War Song</a></li>" + 
 	"<li><a href=\"KanColleSimulator.html\">艦これシミュレーター</a></li>" + 
 	"<li><a href=\"GenerationAlgorithm.html\">遺伝的アルゴリズム(OneMax問題)</a></li>" + 
-	"<li><a href=\"graph.html\">3次元グラフを描こう！</a></li>";
+	"<li><a href=\"graph.html\">3次元グラフを描こう！</a></li>" + 
+	"<li><a href=\"apexChart.html\">ApexChartのデモ</a></li>";
 }
