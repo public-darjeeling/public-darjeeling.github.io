@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-121054999-1');
+	</script>
+	<script src="https://unpkg.com/apexcharts/dist/apexcharts.min.js"></script>
+	<script type="text/javascript" src="init.js" defer></script>
+	<script type="text/javascript" src="apexChart.js" defer></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body onload="init()">
+	<header id="title"></header>
+	<div id="logo"></div>
+	<div class="wrapper">
+		<div class="main">
+			<h1>ApexChartのデモ</h1>
+			<div style="padding: 10px 10px 10px 10px;border: 1px solid #C0C0C0">
+				<h3>棒線グラフ</h3>
+				<div id="chartLine"></div>
+			</div>
+			<div style="padding: 10px 10px 10px 10px;border: 1px solid #C0C0C0">
+				<h3>ドーナツグラフ</h3>
+				<div id="chartDonut"></div>
+			</div>
+			<div style="padding: 10px 10px 10px 10px;border: 1px solid #C0C0C0">
+				<h3>ヒートマップ</h3>
+				<div id="chartHeatMap"></div>
+			</div>
+		</div>
+		<div class="side">
+			<div id="newsList"></div>
+
+		</div>
+	</div>
+	<footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
+</body>
+</html>
