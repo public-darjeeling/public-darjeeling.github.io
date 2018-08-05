@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-121054999-1');
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="profileAccount.js"></script>
+    <script src="init.js" defer></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <title>アカウント登録--WarsongDB--</title>
+    <style>
+        input{
+            border: none;
+            border-bottom: 1px solid #A0A0A0;
+            background-color: #F5F5F5;
+            height: 20px;
+            width : 200px;
+        }
+        .block{
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header><span id="title"></span><span id="login"></span></header>
+    <div class="wrapper">
+        <h2>ユーザー情報登録</h2>
+        <div class="main">
+            <div class="block">
+                userId : <div id="outId" class="small"></div>
+            </div>
+            <div class="block">
+                userName : <div id="outName" class="small"></div>
+            </div>
+            <div class="block">
+                TwitterID : <div id="outTwitter" class="small"></div>
+            </div>
+            <div class="block">
+                Introduction : <div id="outIntroduction" class="small"></div>
+            </div>
+            <button onclick="onEnter()" style="width:100px;">追加</button>
+        </div>
+    </div>
+    <footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
+</body>
+</html>

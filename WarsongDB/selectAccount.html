@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-121054999-1');
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="selectAccount.js"></script>
+    <script src="init.js" defer></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <title>ユーザー情報一覧--WarsongDB--</title>
+</head>
+<body>
+    <header>
+        <span id="title"></span><span id="login"></span>
+        <div id="contents"></div>
+    </header>
+    <div class="wrapper">
+        <h2>ユーザー情報参照</h2>
+        <table id="tableAccount" border="1">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>twitterId</th>
+                <th>ditails</th>
+            </tr>
+        </table>
+    </div>
+    <footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
+</body>
+</html>

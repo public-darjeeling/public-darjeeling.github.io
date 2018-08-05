@@ -1,25 +1,60 @@
-﻿<html>
-
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <title>Sample</title>
-</head>
-<body>
-    <div>
-        userId : <input id="inId" placeholder="WarsongのID">
-    </div>
-    <div>
-        userName : <input id="inName" placeholder="あなたの名前">
-    </div>
-    <div>
-        TwitterID : <input id="inTwitter" placeholder="@無し">
-    </div>
-    <div>
-        Introduction : <input id="inIntroduction" placeholder="自己紹介文">
-    </div>
-    <button onclick="onEnter()">追加</button>
-        <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-121054999-1');
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="createAccount.js"></script>
-
+    <script src="init.js" defer></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <title>アカウント登録--WarsongDB--</title>
+    <style>
+        input{
+            border: none;
+            border-bottom: 1px solid #A0A0A0;
+            background-color: #F5F5F5;
+            height: 20px;
+            width : 200px;
+        }
+        .block{
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header><span id="title"></span><span id="login"></span></header>
+    <div class="wrapper">
+        <h2>ユーザー情報登録</h2>
+        <div class="main" style="padding-left: 10;float: none;">
+            <div class="block">
+                userId : <br><input id="inId" placeholder="WarsongのID">
+            </div>
+            <div class="block">
+                userName : <br><input id="inName" placeholder="あなたの名前">
+            </div>
+            <div class="block">
+                Password : <br><input type="Password" id="inPassword" placeholder="あなたの名前(整数4桁)" maxlength="4">
+            </div>
+            <div class="block">
+                TwitterID : <br><input id="inTwitter" placeholder="@無し">
+            </div>
+            <div class="block">
+                Introduction : <br><input id="inIntroduction" placeholder="自己紹介文">
+            </div>
+            <button onClick="onEnter()">新規登録</button>
+        </div>
+    </div>
+    <footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
 </body>
+</html>

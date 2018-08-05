@@ -7,18 +7,13 @@ var config = {
     messagingSenderId: "258662919178"
 };
 firebase.initializeApp(config);
-
-var rootRef = firebase.database().ref();
+var database = firebase.database();
 
 function onEnter(){
-    rootRef.push({ id: $('#inId').val(), name: $('#inName').val() , twitter: $('#inTwitter').val() , introduction: $('#inIntroduction').val()});
+    if($('#inId').val() != "" && $('#inName').val() != "" && $('#inPassword').val() != ""){
+        database.ref("users/" + $('#inId').val()).push({ id: $('#inId').val(), name: $('#inName').val() , twitter: $('#inTwitter').val() , introduction: $('#inIntroduction').val() , password: encryption($('#inPassword').val())});
+        location.href = "selectAccount.html";
+    }
+    else
+        alert("Id・Name・Passwordは必須です");
 }
-
-rootRef.on('child_added', function (ss) {
-    var msg = ss.val();
-    dspChatMsg(msg.id, msg.name,msg.twitter,msg.introduction);
-});
-
-function dspChatMsg(id,name,twitter,introduction) {
-    console.log(id + " " + name +" " + " @" + twitter + " " + introduction);
-};

@@ -1,0 +1,168 @@
+body {
+	background-color: #FFFFFF;
+	color: #080808;
+	margin: 0 ;				/* スペース */
+	padding: 0 ;			/* 余白 */
+	font-size: 15px ;		/* 文字サイズ */
+	line-height: 1.618 ;	/* 行の高さ */
+}
+header {
+	text-align: left;					/* テキスト、画像の真ん中寄せ */
+	padding: 7px 0 ;					/* 上下の余白 */
+	margin-bottom: 2em ;				/* 他のブロックとのスペース */
+	background: #101010 ;				/* 背景色(確認用) */
+	color: #F0F0F0;
+	font-size: 22px;
+	font-weight: bold;
+}
+footer {
+	border-top: 3px solid #1D7D2D ;		/* 枠線 */
+	text-align: center ;				/* テキスト、画像の真ん中寄せ */
+	margin-top: 2em ;					/* 他のブロックとのスペース */
+	margin-bottom: 0px;
+	padding: 1em 0 ;					/* 上下の余白 */
+	background: #33343A ;
+	color: #f8f8f8;
+}
+summary {
+	border: 1px solid #000000;
+	background-color: #6D739D;
+	color:#E7E7E7;
+	font-weight: 100;
+	padding: 3px 0;
+}
+table {
+	width:300px;
+}
+button{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+button:active {/*ボタンを押したとき*/
+    padding: 0.5em 1em 1em;
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+.headerWrapper{
+	width: 620px;
+	margin: 0 auto;
+}
+.wrapper {
+	background-color: #F5F5F5;
+	border: 1px solid #E0E0E0;
+	box-shadow: 0 0 8px gray;
+	width: 1000px ;
+	margin: 0 auto ;	/* 左右に[auto]を指定することで、真ん中に寄る */
+	padding: 0 ;		/* 上下左右の余白を0にしておく */
+	padding-left: 10px; 
+	overflow: hidden;
+}
+.main {
+	width: 618px ;
+	padding: 20px ;							/* 上下左右に20pxの余白 */
+	float : left;
+}
+
+.side {
+	width: 320px ;
+	padding-top: 25px;
+	float: right;
+}
+.itemName {
+	font-size: 19px;
+	color: #000080;
+	font-weight: bold;
+}
+.item {
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-bottom: 2px solid #ccc;
+	background-color: #f8f8f8;
+	border-radius: 5px;
+}
+.small{
+	color: #202020;
+	font-size: 16px;
+	padding-left:10px;
+}
+.mainTitle {
+	font-size :25px;
+	font-family: 'Cambria Math','ヒラギノ明朝 ProN','Hiragino Mincho ProN',serif;
+}
+.subTitle {
+	text-decoration: none;	
+	padding: 5px 5px 5px 5px;
+	border-left: 1px solid #F0F0F0;
+	border-right:1px solid #F0F0F0;
+	font-size: 20px;
+	font-family: 'Cambria Math','ヒラギノ明朝 ProN','Hiragino Mincho ProN',serif;
+}
+#login{
+	float: right;
+	margin-bottom: 0;
+	font-size: 15px;
+	font-family: 'Cambria Math','ヒラギノ明朝 ProN','Hiragino Mincho ProN',serif;	
+	
+}
+#logo {
+	text-align: center;
+	color :#F0F0F0;
+	background-color: #101010;
+	width: 960px;
+	height: 150px;
+	padding-top: 40px;
+	margin: 0 auto;
+	line-height: 1.2 ;	/* 行の高さ */
+
+}
+
+/* スマホだけに適用するCSS */
+@media screen and ( max-width:479px )
+{
+	/* ボディ */
+	body {
+		font-size: 13px ;	/* 文字サイズ */
+	}
+	header {
+		font-size: 18px;
+		padding-left: 1em;
+	}
+	.wrapper {
+		width: auto ;
+		padding: 0 10px ;		/* 左右の余白 */
+		overflow: hidden;
+	}
+	.main {
+		width: auto ;
+		padding: 0 ;		/* 余白 */
+		border: none ;		/* 枠線 */
+		float: none;
+	}
+
+	.side {
+		width: auto ;
+		float: none;
+	}
+
+	#logo {
+		text-align: center;
+		color :#F0F0F0;
+		background-color: #101010;
+		width: auto;
+		height: 100px;
+		padding: 20px 0px 0px 0px;
+	}
+	.mainTitle {
+		font-size :33px;
+	}
+	.subTitle {
+		font-size: 12px;
+	}
+}
