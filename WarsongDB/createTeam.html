@@ -13,11 +13,11 @@
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="profileAccount.js"></script>
+    <script src="createTeam.js"></script>
     <script src="init.js" defer></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="style.css" rel="stylesheet">
-    <title>ユーザー情報--WarsongDB--</title>
+    <title>チーム登録--WarsongDB--</title>
     <style>
         input{
             border: none;
@@ -36,20 +36,21 @@
 <body>
     <header><span id="title"></span><span id="login"></span></header>
     <div class="wrapper">
-        <div class="main">
-        <h2>ユーザー情報</h2>
+        <div class="main" style="padding-left: 10;float: none;">
+        <h2>チーム情報登録</h2>
             <div class="block">
-                userId : <div id="outId" class="small"></div>
+                TeamId : <br><input id="inId" placeholder="任意、重複不可">
             </div>
             <div class="block">
-                userName : <div id="outName" class="small"></div>
+                TeamName : <br><input id="inName" placeholder="チーム名">
             </div>
             <div class="block">
-                TwitterID : <div id="outTwitter" class="small"></div>
+                LeaderID : <br><input id="inLeader" placeholder="WarsongId">
             </div>
             <div class="block">
-                Introduction : <div id="outIntroduction" class="small"></div>
+                Introduction : <br><input id="inIntroduction" placeholder="チーム紹介文">
             </div>
+            <button onClick="onEnter()">新規登録</button>
         </div>
     </div>
     <footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>

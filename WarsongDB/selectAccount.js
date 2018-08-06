@@ -19,6 +19,5 @@ database.ref("users/").on('child_added', function (ss) {
 function dspList(id,name,twitter,introduction) {
     if(id == "" || name == "" || twitter == "")
         return;
-    console.log(id + " " + name + " " + twitter);
-    $('#tableAccount').html($('#tableAccount').html() + "<tr><td>" + id + "</td><td>" + name + "</td><td><a href=\"https://twitter.com/" + twitter + "\">" + twitter + "</a></td><td><a href=\"profileAccount.html?id=" + id + "\">詳細</td></tr>");
+    $('#tableAccount').html($('#tableAccount').html() + "<tr><td>" + id + "</td><td>" + name + "</td><td><a href=\"https://twitter.com/" + twitter + "\">@" + twitter + "</a></td><td><a href=\"profileAccount.html?id=" + id + "\">詳細</td></tr>");
 };

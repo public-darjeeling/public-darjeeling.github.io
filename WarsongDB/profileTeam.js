@@ -9,14 +9,15 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-database.ref("users/").on('child_added', function (ss) {
-    console.log(ss.key + " " + arg.id);
-    if(parseInt(ss.key) == parseInt(arg.id)){
-        database.ref("users/" + ss.key).on('child_added', function (child_ss){
+database.ref("teams/").on('child_added', function (ss) {
+        console.log(ss.key)
+    if(toString(ss.key) == toString(arg.id)){
+        console.log(ss.key)
+        database.ref("teams/" + ss.key).on('child_added', function (child_ss){
             var msg = child_ss.val();
             $('#outId').html(msg.id);
             $('#outName').html(msg.name);
-            $('#outTwitter').html("<a href=\"https://twitter.com/" + msg.twitter + "\">@" + msg.twitter + "</a>");
+            $('#outLeader').html("<a href=\"profileAccount.html?id=" + msg.leader + "\">" + msg.leader + "</a>");
             $('#outIntroduction').html(msg.introduction);
         })
     }

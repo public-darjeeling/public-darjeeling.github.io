@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-121054999-1');
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="createAccount.js"></script>
+    <script src="init.js" defer></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <title>利用規約--WarsongDB--</title>
+    <style>
+        input{
+            border: none;
+            border-bottom: 1px solid #A0A0A0;
+            background-color: #F5F5F5;
+            height: 20px;
+            width : 200px;
+        }
+        .block{
+            font-size: 22px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header><span id="title"></span><span id="login"></span></header>
+    <div class="wrapper">
+        <h2>ユーザー情報登録</h2>
+        <div class="main" style="padding-left: 10;float: none;">
+            <h2>利用規約</h2>
+            <div height="300" style="overflow-y: scroll;background-color: #FFFFFF;margin-left: 10px;border: 1px solid #505050">
+                <h4>利用料について</h4>
+                <li>1.このシステムは無料です。ただし、どうしてもお金を払いたいという方は連絡下さいww</li>
+                <h4>禁止行為</h4>
+                <li>1.マナーを守りましょう。迷惑行為をしないようにしましょう。</li>
+                <li>2.変なデータをたくさん入れたりしないでください。私が困ります。</li>
+                <h4>禁止行為に対する罰則について</h4>
+                <li>1.禁止行為に対する罰則できるだけの技術は私にありません。なのでお願いですからやめてください(`人`)</li>
+                <h4>セキュリティについて</h4>
+                <li>1.このサイトのセキュリティはガバガバです。なので、パスワードは普段使うようなものは使わないでください。</li>
+                <li>2.データベースの不正操作も簡単に行うことができると思います。そのため、いたずらされたら申し訳ございません。</li>
+                <h4>最後に</h4>
+                <li>1.私は責任感が強くないのでこのサイトを利用した際に生じた一切の責任を負いません！！</li>
+                <li>2.何かトラブルやバグがございましたらTwitterのDMにでもご連絡ください。都合がよければ対応します。</li>
+                <li>3.欲しい機能、デザインの修正要望などもご連絡ください。ついでに参考になるようなURLとかも一緒だと嬉しいです！</li>
+            </div>
+            <h2>提供できるサービス</h2>
+            <div height="300" style="overflow-y: scroll;background-color: #FFFFFF;margin-left: 10px;border: 1px solid #505050">
+                <h4>プレイヤー情報について</h4>
+                <li>1.WarsongのIDやTwitter、自己紹介などを登録できます</li>
+                <li>2.自己紹介には得意なロールやヒーローを記入してください。</li>
+                <li>3.現在は書き込んだ内容を変更できないので注意してください</li>
+                <h4>チーム情報について</h4>
+                <li>1.チーム名、リーダーの情報、チーム紹介などを登録できます</li>
+                <li>2.チーム紹介には活動時間や欲しいプレイヤー、熱意度、応募方法などを記入してください。</li>
+                <li>3.チーム追加申請は実装しようと考えていますが、まだ方法が思いついていないので、それまでは直接やり取りしてください</li>
+                <li>4.現在は書き込んだ内容を変更できないので注意してください</li>
+            </div>
+        </div>
+    </div>
+    <footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
+</body>
+</html>
