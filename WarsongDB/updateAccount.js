@@ -9,6 +9,7 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
+var id
 var password
 
 database.ref("users/").on('child_added', function (ss) {
@@ -21,6 +22,7 @@ database.ref("users/").on('child_added', function (ss) {
         $('#inIntroduction').val(msg.introduction);
         $('#inRank').val(msg.rank);
         $('#inPrefecture').val(msg.prefecture)
+        id = msg.id;
         password = msg.password
     }
 });
@@ -34,7 +36,7 @@ function onUpdate(){
         alert("パスワードが違います");
     }else{
         try{
-            database.ref("users/" + $('#inId').val()).set({ id: $('#inId').val(), 
+            database.ref("users/" + id).set({ id: id, 
                                                             name: $('#inName').val() , 
                                                             twitter: $('#inTwitter').val() , 
                                                             introduction: $('#inIntroduction').val() , 

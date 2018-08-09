@@ -18,11 +18,6 @@ if(window.parent.screen.width > 499){
 					 	"</span>");
 }
 
-/*if(arg.id!=null)
-	$('#login').html("<span>ID:" + arg.id + "としてログイン</span>");
-else
-	$('#login').html("<a href=\"createAccount.html\">Sign up</a>" );
-*/
 function encryption(pass){
 	pass = parseInt(pass);
 	pass += 1234;
