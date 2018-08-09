@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121054999-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-121054999-1');
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="init.js" defer></script>
+    <script src="updateAccount.js" defer></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <title>アカウント情報更新--WarsongDB--</title>
+    <style>
+        input{
+            border: none;
+            border-bottom: 1px solid #A0A0A0;
+            background-color: #F5F5F5;
+            height: 20px;
+            width : 200px;
+        }
+        .block{
+            font-size: 22px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header><span id="title"></span><span id="login"></span></header>
+    <div class="wrapper">
+        <div class="main" style="padding-left: 10;float: none;">
+        <h2>ユーザー情報登録</h2>
+
+            <div class="block">
+                userId : <br><input id="inId" placeholder="WarsongのID">
+            </div>
+            <div class="block">
+                userName : <br><input id="inName" placeholder="あなたの名前">
+            </div>
+            <div class="block">
+                TwitterID : <br><input id="inTwitter" placeholder="@無し">
+            </div>
+            <div class="block">
+                Introduction : <br><input id="inIntroduction" placeholder="自己紹介文">
+            </div>
+            <div class="block">
+                Rank : <br><select id="inRank" style="height:20px;width:200px;" value="None">
+                    <option value="None">None</option>
+                    <option value="Pawn">Pawn</option>
+                    <option value="Luke">Luke</option>
+                    <option value="Knight">Knight</option>
+                    <option value="Bishop">Bishop</option>
+                    <option value="Queen">Queen</option>
+                    <option value="King">King</option>
+                </select>
+            </div>
+            <div class="block">
+                Prefecture : <br><input id="inPrefecture" placeholder="漢字,都・道・府・県無し">
+            </div>
+            <br><br>
+            <div class="block">
+                Input Password !! : <br><input type="Password" id="checkPassword" placeholder="あなたの名前(整数4桁)" maxlength="4" pattern="[0-9]+" title="パスワードは半角数字で入力してください。">
+            </div>
+            <button onClick="onUpdate()">変更</button>
+        </div>
+    </div>
+    <footer>Twitter: <a href="https://twitter.com/DarjeelingSeido">@SeidoDarjeeling</a></footer>
+</body>
+</html>

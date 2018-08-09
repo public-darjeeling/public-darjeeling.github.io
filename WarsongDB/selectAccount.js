@@ -10,10 +10,8 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 database.ref("users/").on('child_added', function (ss) {
-    database.ref("users/" + ss.key).on('child_added', function (child_ss){
-        var msg = child_ss.val();
-        dspList(msg.id, msg.name, msg.twitter);        
-    })
+    var msg = ss.val();
+    dspList(msg.id, msg.name, msg.twitter);        
 });
 
 function dspList(id,name,twitter,introduction) {

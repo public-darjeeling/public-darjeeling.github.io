@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 function onEnter(){
     if($('#inName').val() != ""){
-        database.ref("teams/" + $('#inId').val()).push({ id: $('#inId').val(), name: $('#inName').val() , leader: $('#inLeader').val() , introduction: $('#inIntroduction').val()});
+        database.ref("teams/" + $('#inId').val()).set({ id: $('#inId').val(), name: $('#inName').val() , leader: $('#inLeader').val() , introduction: $('#inIntroduction').val()});
         location.href = "selectTeam.html";
     }
     else

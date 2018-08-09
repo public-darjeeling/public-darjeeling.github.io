@@ -13,12 +13,10 @@ database.ref("teams/").on('child_added', function (ss) {
         console.log(ss.key)
     if(toString(ss.key) == toString(arg.id)){
         console.log(ss.key)
-        database.ref("teams/" + ss.key).on('child_added', function (child_ss){
-            var msg = child_ss.val();
-            $('#outId').html(msg.id);
-            $('#outName').html(msg.name);
-            $('#outLeader').html("<a href=\"profileAccount.html?id=" + msg.leader + "\">" + msg.leader + "</a>");
-            $('#outIntroduction').html(msg.introduction);
-        })
+        var msg = ss.val();
+        $('#outId').html(msg.id);
+        $('#outName').html(msg.name);
+        $('#outLeader').html("<a href=\"profileAccount.html?id=" + msg.leader + "\">" + msg.leader + "</a>");
+        $('#outIntroduction').html(msg.introduction);
     }
 });

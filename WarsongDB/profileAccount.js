@@ -10,14 +10,14 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 database.ref("users/").on('child_added', function (ss) {
-    console.log(ss.key + " " + arg.id);
+    console.log(ss.key + " " + ss.val());
     if(parseInt(ss.key) == parseInt(arg.id)){
-        database.ref("users/" + ss.key).on('child_added', function (child_ss){
-            var msg = child_ss.val();
-            $('#outId').html(msg.id);
-            $('#outName').html(msg.name);
-            $('#outTwitter').html("<a href=\"https://twitter.com/" + msg.twitter + "\">@" + msg.twitter + "</a>");
-            $('#outIntroduction').html(msg.introduction);
-        })
+        var msg = ss.val();
+        $('#outId').html(msg.id);
+        $('#outName').html(msg.name);
+        $('#outTwitter').html("<a href=\"https://twitter.com/" + msg.twitter + "\">@" + msg.twitter + "</a>");
+        $('#outIntroduction').html(msg.introduction);
     }
 });
+
+$('#change').html("<a href=\"updateAccount.html?id=" + arg.id + "\"><button>変更・削除</button></a>");
