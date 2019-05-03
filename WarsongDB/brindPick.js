@@ -13,7 +13,6 @@ var id = 0,message = 0;
 var key,state = null;
 
 database.ref("bp/").on('child_added', function (ss) {
-    console.log(ss + " " + arg.id);
     if(parseInt(ss.key) == parseInt(arg.id) || arg.id=="-1"){
         var msg = ss.val();
         key = ss.key;
@@ -39,11 +38,11 @@ function check(link){
 
 function create(){
     console.log(id + " " + state);
-    database.ref("bp/" + (parseInt(id) + 1)).set({ id: parseInt(id) + 1,state: ['']});
+    database.ref("bp/" + (parseInt(id) + 1)).set({ id: parseInt(id) + 1,state: ["init"]});
     location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + parseInt(id) + "&team=1");
 }
-console.log(arg)
-if (parseInt(arg.id) == -1){
+console.log(id + " " + state)
+if (arg.id == -1){
     $('#text').html("<button onClick='create()'>New Room</button>");
 }else if(arg.team == 1){
     $('#text').html("<div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=0</a></div><div>このリンクを相手に紹介してください</div>");
