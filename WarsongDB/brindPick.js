@@ -12,27 +12,49 @@ var database = firebase.database();
 var id = 0,message = 0;
 var key,state = null;
 
-database.ref("bp/").on('child_changed', function (ss) {
+database.ref("bp/").on('child_added', function (ss) {
+    console.log(ss.val());
     if(parseInt(ss.key) == parseInt(arg.id) || arg.id=="-1"){
         var msg = ss.val();
         key = ss.key;
-        state = new Array(msg.state);
+        state = msg.state;
         id = msg.id;
+        console.log(id + " " + state)
+        for(var i = 1;i < state.length;i++){
+            if(i <= 9)
+                $("#hero0" + i).html("<img src=" + state[i] + ">")
+            else
+                $("#hero" + i).html("<img src=" + state[i] + ">")
+        }
+    }
+});
+database.ref("bp/").on('child_changed', function (ss) {
+    console.log(ss.val());
+    if(parseInt(ss.key) == parseInt(arg.id) || arg.id=="-1"){
+        var msg = ss.val();
+        key = ss.key;
+        state = msg.state;
+        id = msg.id;
+        console.log(id + " " + state)
+        for(var i = 1;i < state.length;i++){
+            if(i <= 9)
+                $("#hero0" + i).html("<img src=" + state[i] + ">")
+            else
+                $("#hero" + i).html("<img src=" + state[i] + ">")
+        }
     }
 });
 
-function check(link){
-    console.log(String(link))
-    console.log(state)
-    console.log(state.length)
+function check(img){
+    console.log(img.src)
     if(arg.team==0){
-        if([1,4,5,8,9,12,13].indexOf(state.length) + 1){
-            state.push(link)
+        if([1,4,6,7,10,11,14].indexOf(state.length) + 1){
+            state.push(img.src)
             database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
         }
     }else if(arg.team==1){
-        if([2,3,6,7,10,11,14].indexOf(state.length) + 1){
-            state.push(link)
+        if([2,3,5,8,9,12,13].indexOf(state.length) + 1){
+            state.push(img.src)
             database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
         }
     }
@@ -45,5 +67,8 @@ function create(){
 if (arg.id == -1){
     $('#text').html("<button onClick='create()'>New Room</button>");
 }else if(arg.team == 1){
-    $('#text').html("<div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=0</a></div><div>このリンクを相手に紹介してください</div>");
+    $('#text').html("<h2 style='color:#FF0000'>あなたは赤です</h2><div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=0</a></div><div>このリンクを相手に紹介してください</div>" + 
+                    "<div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=-1</a></div><div>このリンクは観戦する人に紹介してください</div>");
+}else if(arg.team == 0){
+    $("#text").html("<h2 style='color:#0000FF'>あなたは青です</h2><div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=-1</a></div><div>このリンクは観戦する人に紹介してください</div>")
 }
