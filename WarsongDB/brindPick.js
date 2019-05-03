@@ -18,6 +18,7 @@ database.ref("bp/").on('child_added', function (ss) {
         var msg = ss.val();
         key = ss.key;
         state = msg.state;
+        id = msg.id;
     }
 });
 
@@ -26,12 +27,12 @@ function check(link){
 }
 
 function create(){
-    database.ref("bp/" + (parseInt(arg.id) + 1)).set({ id: parseInt(arg.id) + 1,state: new Array()});
-    location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick?id=" + (parseInt(arg.id) + 1) + "&team=red");
+    database.ref("bp/" + (parseInt(id) + 1)).set({ id: parseInt(id) + 1,state: ['']});
+    location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + (parseInt(id) + 1) + "&team=red");
 }
 
 if (parseInt(arg.id) == -1){
     $('#text').html("<button onClick='create()'>New Room</button>");
-}else{
-    $('#text').html("<div>http://public-darjeeling.github.io/WarsongDB/brindPick?id=" + arg.id + "&team=blue</div> このリンクを相手に紹介してください");
+}else if(arg.team == "red"){
+    $('#text').html("<div>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=blue</div> このリンクを相手に紹介してください");
 }
