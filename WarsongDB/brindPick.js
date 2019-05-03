@@ -46,5 +46,5 @@ function create(){
 if (parseInt(arg.id) == -1){
     $('#text').html("<button onClick='create()'>New Room</button>");
 }else if(arg.team == "red"){
-    $('#text').html("<div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=blue<a></div><div>このリンクを相手に紹介してください</div>");
+    $('#text').html("<div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=blue</a></div><div>このリンクを相手に紹介してください</div>");
 }
