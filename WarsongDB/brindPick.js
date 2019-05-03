@@ -16,13 +16,13 @@ database.ref("bp/").on('child_added', function (ss) {
     if(parseInt(ss.key) == parseInt(arg.id) || arg.id=="-1"){
         var msg = ss.val();
         key = ss.key;
-        state = msg.state;
+        state = new Array(msg.state);
         id = msg.id;
     }
 });
 
 function check(link){
-    console.log(String(link))
+    console.log(String(link) + " " + state)
     if(arg.team==0){
         if([1,4,5,8,9,12,13].indexOf(state.length)){
             state.append(link)
@@ -37,7 +37,6 @@ function check(link){
 }
 
 function create(){
-    console.log(id + " " + state);
     database.ref("bp/" + (parseInt(id) + 1)).set({ id: parseInt(id) + 1,state: ["init"]});
     location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + parseInt(id) + "&team=1");
 }
