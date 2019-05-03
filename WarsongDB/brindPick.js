@@ -22,7 +22,8 @@ database.ref("bp/").on('child_added', function (ss) {
 });
 
 function check(link){
-    console.log(String(link) + " " + state)
+    console.log(String(link))
+    console.log(state)
     if(arg.team==0){
         if([1,4,5,8,9,12,13].indexOf(state.length)){
             state.append(link)
@@ -40,7 +41,6 @@ function create(){
     database.ref("bp/" + (parseInt(id) + 1)).set({ id: parseInt(id) + 1,state: ["init"]});
     location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + parseInt(id) + "&team=1");
 }
-console.log(id + " " + state)
 if (arg.id == -1){
     $('#text').html("<button onClick='create()'>New Room</button>");
 }else if(arg.team == 1){
