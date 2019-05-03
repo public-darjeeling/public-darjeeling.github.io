@@ -24,12 +24,23 @@ database.ref("bp/").on('child_added', function (ss) {
 
 function check(link){
     console.log(String(link))
+    if(arg.team=="blue"){
+        if([1,4,5,8,9,12,13].indexOf(state.length)){
+            state.append(link)
+            database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
+        }
+    }else if(arg.team=="red"){
+        if([2,3,6,7,10,11,14].indexOf(state.length)){
+            state.append(link)
+            database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
+        }
+    }
 }
 
 function create(){
     console.log(id + " " + state);
     database.ref("bp/" + (parseInt(id) + 1)).set({ id: parseInt(id) + 1,state: ['']});
-    location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + (parseInt(id) + 1) + "&team=red");
+    location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + parseInt(id) + "&team=red");
 }
 
 if (parseInt(arg.id) == -1){
