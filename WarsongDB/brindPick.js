@@ -12,7 +12,7 @@ var database = firebase.database();
 var id = 0,message = 0;
 var key,state = null;
 
-database.ref("bp/").on('child_added', function (ss) {
+database.ref("bp/").on('child_changed', function (ss) {
     if(parseInt(ss.key) == parseInt(arg.id) || arg.id=="-1"){
         var msg = ss.val();
         key = ss.key;
@@ -26,12 +26,12 @@ function check(link){
     console.log(state)
     console.log(state.length)
     if(arg.team==0){
-        if([1,4,5,8,9,12,13].indexOf(state.length)){
+        if([1,4,5,8,9,12,13].indexOf(state.length) + 1){
             state.push(link)
             database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
         }
     }else if(arg.team==1){
-        if([2,3,6,7,10,11,14].indexOf(state.length)){
+        if([2,3,6,7,10,11,14].indexOf(state.length) + 1){
             state.push(link)
             database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
         }
