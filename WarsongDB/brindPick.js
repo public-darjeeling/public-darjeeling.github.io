@@ -24,12 +24,12 @@ database.ref("bp/").on('child_added', function (ss) {
 
 function check(link){
     console.log(String(link))
-    if(arg.team=="blue"){
+    if(arg.team==0){
         if([1,4,5,8,9,12,13].indexOf(state.length)){
             state.append(link)
             database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
         }
-    }else if(arg.team=="red"){
+    }else if(arg.team==1){
         if([2,3,6,7,10,11,14].indexOf(state.length)){
             state.append(link)
             database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
@@ -40,11 +40,11 @@ function check(link){
 function create(){
     console.log(id + " " + state);
     database.ref("bp/" + (parseInt(id) + 1)).set({ id: parseInt(id) + 1,state: ['']});
-    location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + parseInt(id) + "&team=red");
+    location.assign("http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + parseInt(id) + "&team=1");
 }
-
+console.log(arg)
 if (parseInt(arg.id) == -1){
     $('#text').html("<button onClick='create()'>New Room</button>");
-}else if(arg.team == "red"){
-    $('#text').html("<div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=blue</a></div><div>このリンクを相手に紹介してください</div>");
+}else if(arg.team == 1){
+    $('#text').html("<div><a>http://public-darjeeling.github.io/WarsongDB/brindPick.html?id=" + arg.id + "&team=0</a></div><div>このリンクを相手に紹介してください</div>");
 }
