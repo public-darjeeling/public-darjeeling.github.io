@@ -47,15 +47,17 @@ database.ref("bp/").on('child_changed', function (ss) {
 
 function check(img){
     console.log(img.src)
-    if(arg.team==0){
-        if([1,4,6,7,10,11,14].indexOf(state.length) + 1){
-            state.push(img.src)
-            database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
-        }
-    }else if(arg.team==1){
-        if([2,3,5,8,9,12,13].indexOf(state.length) + 1){
-            state.push(img.src)
-            database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
+    if(!state.indexOf(img.src)){
+        if(arg.team==0){
+            if([1,4,6,7,10,11,14].indexOf(state.length) + 1){
+                state.push(img.src)
+                database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
+            }
+        }else if(arg.team==1){
+            if([2,3,5,8,9,12,13].indexOf(state.length) + 1){
+                state.push(img.src)
+                database.ref("bp/" + parseInt(id)).set({ id: parseInt(id),state: state});
+            }
         }
     }
 }
