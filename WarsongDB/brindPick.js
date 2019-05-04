@@ -47,7 +47,7 @@ database.ref("bp/").on('child_changed', function (ss) {
 
 function check(img){
     console.log(img.src)
-    if(!state.indexOf(img.src)){
+    if(state.indexOf(img.src) == -1){
         if(arg.team==0){
             if([1,4,6,7,10,11,14].indexOf(state.length) + 1){
                 state.push(img.src)
